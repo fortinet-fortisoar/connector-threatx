@@ -1,0 +1,353 @@
+{
+  "name": "threatx",
+  "label": "ThreatX",
+  "description": "Use the ThreatX integration to enrich intel and automate enforcement actions on the ThreatX Next Gen WAF.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Network Security",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url",
+        "description": "URL of the ThreatX server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "API Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_key",
+        "description": "The api key for the ThreatX server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Customer Name",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "customer_name",
+        "description": "The customer name for the ThreatX server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "block_ip",
+      "title": "Block IP Address",
+      "description": "Add IP Address entry to blocklist in Threat X.",
+      "category": "investigation",
+      "annotation": "block_ip",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "IP Address",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_address",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify IP address which you want to block in Threat X. IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\"."
+        },
+        {
+          "title": "Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify the description of IP address in the block list."
+        }
+      ]
+    },
+    {
+      "operation": "unblock_ip",
+      "title": "Unblock IP Address",
+      "description": "Remove IP Address entry from blocklist in Threat X.",
+      "category": "investigation",
+      "annotation": "unblock_ip",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "IP Address",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_address",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify IP address which you want to block in Threat X. IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\"."
+        }
+      ]
+    },
+    {
+      "operation": "blacklist_ip",
+      "title": "Blacklist IP Address",
+      "description": "Add IP Address entry to blacklist in Threat X.",
+      "category": "investigation",
+      "annotation": "blacklist_ip",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "IP Address",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_address",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify IP address which you want to blacklist in Threat X. IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\"."
+        },
+        {
+          "title": "Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify the description of IP address in the blacklist."
+        }
+      ]
+    },
+    {
+      "operation": "unblacklist_ip",
+      "title": "Unblacklist IP Address",
+      "description": "Remove IP Address entry from blacklist in Threat X.",
+      "category": "investigation",
+      "annotation": "unblacklist_ip",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "IP Address",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_address",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify IP address which you want to unblacklist in Threat X. IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\"."
+        }
+      ]
+    },
+    {
+      "operation": "whitelist_ip",
+      "title": "Whitelist IP Address",
+      "description": "Add IP Address entry to whitelist in Threat X.",
+      "category": "investigation",
+      "annotation": "whitelist_ip",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "IP Address",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_address",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify IP address which you want to whitelist in Threat X. IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\"."
+        },
+        {
+          "title": "Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify the description of IP address in the whitelist."
+        }
+      ]
+    },
+    {
+      "operation": "unwhitelist_ip",
+      "title": "Unwhitelist IP Address",
+      "description": "Remove IP Address entry from whitelist in Threat X.",
+      "category": "investigation",
+      "annotation": "unwhitelist_ip",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "IP Address",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_address",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify IP address which you want to unwhitelist in Threat X. IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\"."
+        }
+      ]
+    },
+    {
+      "operation": "get_entities",
+      "title": "Get Entities",
+      "description": "Returns the Entity information by Timeframe, Entity ID, Entity Name, or Entity IP from Threat X.",
+      "category": "investigation",
+      "annotation": "get_entities",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Timeframe",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "first_seen",
+          "value": "",
+          "tooltip": "Timeframe for the query. Options are 1-Hour, 1-Day, 1-Week, 1-Month, or 3-Months.",
+          "description": "Specify the timeframe for the query. Options are 1-Hour, 1-Day, 1-Week, 1-Month, or 3-Months."
+        },
+        {
+          "title": "IP Address",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_address",
+          "value": "",
+          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "description": "Specify IP address which you want to whitelist in Threat X. IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\"."
+        },
+        {
+          "title": "Entity IDs",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "entity_ids",
+          "value": "",
+          "tooltip": "The CSV list of Entity ID hashes",
+          "description": "Specify the CSV list of Entity ID hashes."
+        },
+        {
+          "title": "Codenames",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "codenames",
+          "value": "",
+          "tooltip": "The CSV list of codenames or entity names.",
+          "description": "Specify the CSV list of codenames or entity names."
+        },
+        {
+          "title": "Actor IDs",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "actor_ids",
+          "value": "",
+          "tooltip": "The CSV list of actor IDs.",
+          "description": "Specify the CSV list of actor IDs."
+        },
+        {
+          "title": "Attack IDs",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "attack_ids",
+          "value": "",
+          "tooltip": "The CSV list of attack IDs.",
+          "description": "Specify the CSV list of attack IDs."
+        }
+      ]
+    },
+    {
+      "operation": "get_entity_notes",
+      "title": "Get Entity Notes",
+      "description": "Returns the notes attached to an entity by Entity ID from Threat X.",
+      "category": "investigation",
+      "annotation": "get_entity_notes",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Entity ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id",
+          "value": "",
+          "tooltip": "ID of the entity which is returned from action Get Entities.",
+          "description": "Specify the ID of the entity which is returned from action Get Entities."
+        }
+      ]
+    },
+    {
+      "operation": "add_entity_note",
+      "title": "Add Entity Notes",
+      "description": "Adds a new note to an entity in Threat X.",
+      "category": "investigation",
+      "annotation": "add_entity_note",
+      "output_schema": {"Ok": ""},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Entity ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id",
+          "value": "",
+          "tooltip": "ID of the entity which is returned from action Get Entities.",
+          "description": "Specify the ID of the entity which is returned from action Get Entities."
+        },
+        {
+          "title": "Content",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "content",
+          "value": "",
+          "tooltip": "Content of the note.",
+          "description": "Specify the content which need to be added to the entity."
+        }
+      ]
+    }
+  ]
+}
