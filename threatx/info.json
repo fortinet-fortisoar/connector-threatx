@@ -63,7 +63,7 @@
       "parameters": [
         {
           "title": "IP Address",
-          "required": false,
+          "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
@@ -80,7 +80,7 @@
           "type": "text",
           "name": "description",
           "value": "",
-          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "tooltip": "Specify the description of IP address in the block list.",
           "description": "Specify the description of IP address in the block list."
         }
       ]
@@ -96,7 +96,7 @@
       "parameters": [
         {
           "title": "IP Address",
-          "required": false,
+          "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
@@ -118,7 +118,7 @@
       "parameters": [
         {
           "title": "IP Address",
-          "required": false,
+          "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
@@ -135,7 +135,7 @@
           "type": "text",
           "name": "description",
           "value": "",
-          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "tooltip": "Specify the description of IP address in the blacklist.",
           "description": "Specify the description of IP address in the blacklist."
         }
       ]
@@ -173,7 +173,7 @@
       "parameters": [
         {
           "title": "IP Address",
-          "required": false,
+          "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
@@ -190,7 +190,7 @@
           "type": "text",
           "name": "description",
           "value": "",
-          "tooltip": "IP address or CIDR, for example: \"10.1.1.1\" or \"10.1.1.0/24\".",
+          "tooltip": "Specify the description of IP address in the whitelist.",
           "description": "Specify the description of IP address in the whitelist."
         }
       ]

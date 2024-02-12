@@ -1,8 +1,9 @@
-""" Copyright start
-  Copyright (C) 2008 - 2024 Fortinet Inc.
-  All rights reserved.
-  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
-  Copyright end """
+"""
+Copyright start
+MIT License
+Copyright (c) 2024 Fortinet Inc
+Copyright end
+"""
 
 import requests
 import time
@@ -43,8 +44,8 @@ class ThreatX():
                 logger.error('Unauthorized: Invalid credentials')
                 raise ConnectorError('Unauthorized: Invalid credentials')
             elif response.status_code == 500 or response.status_code == 404:
-                logger.error('Invalid input')
-                raise ConnectorError('Invalid input')
+                logger.error('Invalid Input or Internal Server Error.')
+                raise ConnectorError('Invalid Input or Internal Server Error.')
             else:
                 logger.error(
                     'Fail To request API {0} response is : {1} with reason: {2}'.format(str(url), str(response.content),
