@@ -1,0 +1,657 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "fa58e8da-5582-4c03-8df0-09d7d9faf207",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "a5c7f104-a0ba-4429-bb14-48231e83ac27",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "91fb5553-697b-4dfb-9577-667107973376",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "9dce4dc6-9239-4a1f-bcf3-c1d38c007285",
+              "@type": "WorkflowStep",
+              "name": "Block IP Address",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "ip_address": "",
+                  "description": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "block_ip",
+                "operationTitle": "Block IP Address"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Add IP Address entry to blocklist in Threat X.",
+          "name": "Block IP Address",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/91fb5553-697b-4dfb-9577-667107973376",
+          "routes": [
+            {
+              "uuid": "5a199cce-bc98-4aeb-9c65-1de9ae636b2d",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Block IP Address",
+              "sourceStep": "/api/3/workflow_steps/91fb5553-697b-4dfb-9577-667107973376",
+              "targetStep": "/api/3/workflow_steps/9dce4dc6-9239-4a1f-bcf3-c1d38c007285"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2d7f6e5a-7cfa-4679-a697-48bb92b9b017",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "234591d4-c21a-4620-9c41-a8cf90b5d52c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "2c183e19-bb98-41fc-8cd5-3efd566d8c9b",
+              "@type": "WorkflowStep",
+              "name": "Unblock IP Address",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "ip_address": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "unblock_ip",
+                "operationTitle": "Unblock IP Address"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Remove IP Address entry from blocklist in Threat X.",
+          "name": "Unblock IP Address",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/234591d4-c21a-4620-9c41-a8cf90b5d52c",
+          "routes": [
+            {
+              "uuid": "794697a9-8284-4993-87f8-bb6e95b12e83",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Unblock IP Address",
+              "sourceStep": "/api/3/workflow_steps/234591d4-c21a-4620-9c41-a8cf90b5d52c",
+              "targetStep": "/api/3/workflow_steps/2c183e19-bb98-41fc-8cd5-3efd566d8c9b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7271b598-9e15-4248-aff4-68aed35a06cb",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "3561697c-b04d-4202-848f-db76f24ac708",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "81dc0677-56b8-4fc2-a00d-744666d95b48",
+              "@type": "WorkflowStep",
+              "name": "Blacklist IP Address",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "ip_address": "",
+                  "description": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "blacklist_ip",
+                "operationTitle": "Blacklist IP Address"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Add IP Address entry to blacklist in Threat X.",
+          "name": "Blacklist IP Address",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3561697c-b04d-4202-848f-db76f24ac708",
+          "routes": [
+            {
+              "uuid": "0e2122d9-6164-416b-9676-b86e07175e98",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Blacklist IP Address",
+              "sourceStep": "/api/3/workflow_steps/3561697c-b04d-4202-848f-db76f24ac708",
+              "targetStep": "/api/3/workflow_steps/81dc0677-56b8-4fc2-a00d-744666d95b48"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a2f8d78e-f750-4746-967d-8cd8db4c9e63",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "a4472caa-14cb-484a-aecb-20312c07629c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "68cbbc77-d9d9-44fa-9f60-5ee3ea559d83",
+              "@type": "WorkflowStep",
+              "name": "Unblacklist IP Address",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "ip_address": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "unblacklist_ip",
+                "operationTitle": "Unblacklist IP Address"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Remove IP Address entry from blacklist in Threat X.",
+          "name": "Unblacklist IP Address",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a4472caa-14cb-484a-aecb-20312c07629c",
+          "routes": [
+            {
+              "uuid": "f4430d0f-1ac5-4b91-a640-926bc3173961",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Unblacklist IP Address",
+              "sourceStep": "/api/3/workflow_steps/a4472caa-14cb-484a-aecb-20312c07629c",
+              "targetStep": "/api/3/workflow_steps/68cbbc77-d9d9-44fa-9f60-5ee3ea559d83"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "595bddd6-e405-4063-bec0-8f24906701f8",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "55ed34c8-403b-4b3b-a472-922fe57af2f2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "544348ae-91c4-4583-a862-0fd316478a12",
+              "@type": "WorkflowStep",
+              "name": "Whitelist IP Address",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "ip_address": "",
+                  "description": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "whitelist_ip",
+                "operationTitle": "Whitelist IP Address"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Add IP Address entry to whitelist in Threat X.",
+          "name": "Whitelist IP Address",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/55ed34c8-403b-4b3b-a472-922fe57af2f2",
+          "routes": [
+            {
+              "uuid": "bbd0f453-a032-4bd5-ad92-851699e1ecdd",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Whitelist IP Address",
+              "sourceStep": "/api/3/workflow_steps/55ed34c8-403b-4b3b-a472-922fe57af2f2",
+              "targetStep": "/api/3/workflow_steps/544348ae-91c4-4583-a862-0fd316478a12"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ceb14ca5-4cf7-4cf7-9465-23d17d2f3143",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "ebca444c-0782-4d9b-bc71-7f59b5845e9a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "2f6dd7a6-d1e1-4649-aa89-e200643c0cc0",
+              "@type": "WorkflowStep",
+              "name": "Unwhitelist IP Address",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "ip_address": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "unwhitelist_ip",
+                "operationTitle": "Unwhitelist IP Address"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Remove IP Address entry from whitelist in Threat X.",
+          "name": "Unwhitelist IP Address",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ebca444c-0782-4d9b-bc71-7f59b5845e9a",
+          "routes": [
+            {
+              "uuid": "5fe757d1-5fcf-4e9f-9f09-a54579173e92",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Unwhitelist IP Address",
+              "sourceStep": "/api/3/workflow_steps/ebca444c-0782-4d9b-bc71-7f59b5845e9a",
+              "targetStep": "/api/3/workflow_steps/2f6dd7a6-d1e1-4649-aa89-e200643c0cc0"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7e7d68ea-179c-439c-8578-a9813919fdf6",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "8cdf90ac-b61b-4f82-ae65-427f2c8204c1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "050dddb8-7574-4ad1-9fc3-6613ca352134",
+              "@type": "WorkflowStep",
+              "name": "Get Entities",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "first_seen": "",
+                  "ip_address": "",
+                  "entity_ids": "",
+                  "codenames": "",
+                  "actor_ids": "",
+                  "attack_ids": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "get_entities",
+                "operationTitle": "Get Entities"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Returns the Entity information by Timeframe, Entity ID, Entity Name, or Entity IP from Threat X.",
+          "name": "Get Entities",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8cdf90ac-b61b-4f82-ae65-427f2c8204c1",
+          "routes": [
+            {
+              "uuid": "b9e0edc2-db10-4985-baf3-6532fd58b745",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Entities",
+              "sourceStep": "/api/3/workflow_steps/8cdf90ac-b61b-4f82-ae65-427f2c8204c1",
+              "targetStep": "/api/3/workflow_steps/050dddb8-7574-4ad1-9fc3-6613ca352134"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "bdbfdc4e-6bde-4ff1-8567-a0e306a411f6",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "c4ae4907-509d-4a1b-bca9-9a8ddfe8e08e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "956d9299-106f-4554-ae32-6fb1da092b34",
+              "@type": "WorkflowStep",
+              "name": "Get Entity Notes",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "id": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "get_entity_notes",
+                "operationTitle": "Get Entity Notes"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Returns the notes attached to an entity by Entity ID from Threat X.",
+          "name": "Get Entity Notes",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c4ae4907-509d-4a1b-bca9-9a8ddfe8e08e",
+          "routes": [
+            {
+              "uuid": "bac2f460-764a-4091-bc49-d0614f32b00f",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Entity Notes",
+              "sourceStep": "/api/3/workflow_steps/c4ae4907-509d-4a1b-bca9-9a8ddfe8e08e",
+              "targetStep": "/api/3/workflow_steps/956d9299-106f-4554-ae32-6fb1da092b34"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "68ea4bb2-0b67-4657-81fd-6afba125ac0b",
+          "collection": "/api/3/workflow_collections/fa58e8da-5582-4c03-8df0-09d7d9faf207",
+          "steps": [
+            {
+              "uuid": "cc5835b3-52f6-4975-88a0-5683b9f87ce5",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "16ee11ab-ed68-4332-b3fa-281e08726116",
+              "@type": "WorkflowStep",
+              "name": "Add Entity Notes",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ThreatX",
+                "config": "",
+                "params": {
+                  "id": "",
+                  "content": ""
+                },
+                "version": "1.0.0",
+                "connector": "threatx",
+                "operation": "add_entity_note",
+                "operationTitle": "Add Entity Notes"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Adds a new note to an entity in Threat X.",
+          "name": "Add Entity Notes",
+          "tag": "#ThreatX",
+          "recordTags": [
+            "Threatx",
+            "threatx"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cc5835b3-52f6-4975-88a0-5683b9f87ce5",
+          "routes": [
+            {
+              "uuid": "7f60c423-90e0-4c76-84a8-378ae79328ca",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Entity Notes",
+              "sourceStep": "/api/3/workflow_steps/cc5835b3-52f6-4975-88a0-5683b9f87ce5",
+              "targetStep": "/api/3/workflow_steps/16ee11ab-ed68-4332-b3fa-281e08726116"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - ThreatX - 1.0.0",
+      "description": "Use the ThreatX integration to enrich intel and automate enforcement actions on the ThreatX Next Gen WAF.",
+      "visible": true,
+      "recordTags": [
+        "Threatx",
+        "threatx"
+      ]
+    }
+  ]
+}
