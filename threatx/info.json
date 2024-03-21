@@ -3,7 +3,7 @@
   "label": "ThreatX",
   "description": "Use the ThreatX integration to enrich intel and automate enforcement actions on the ThreatX Next Gen WAF.",
   "publisher": "Fortinet",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "version": "1.0.0",
   "category": "Network Security",
